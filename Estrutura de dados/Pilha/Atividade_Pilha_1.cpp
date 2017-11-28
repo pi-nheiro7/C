@@ -250,7 +250,6 @@ main (){
 	}
 	
 	while (escolha != 0){
-		
 		if (escolha == 1){
 			system ("cls");
 			stackUp(&p);
@@ -262,7 +261,6 @@ main (){
 		else if (escolha == 3){
 			system ("cls");
 			showPile(&p);
-			
 		} 
 		else if (escolha == 4){
 			system ("cls");
@@ -290,6 +288,11 @@ main (){
 		} 
 		
 		escolha = menu();
+		
+		while (escolha > 9 || escolha < 0){
+			printf ("\nOPÇÃO INEXISTENTE, TENTE NOVAMENTE: ");
+			scanf ("%d",&escolha);
+		}
 		
 	}
 	
