@@ -58,6 +58,7 @@ void stackUp (struct pilha *p){
 //2
 void unPack (struct pilha *p){
 	
+	printf("\n*****|DESEMPILHANDO|*****");
 	if (p->topo == -1){
 		printf ("\nERROR - PILHA VAZIA\n\n");
 	} else {
@@ -71,7 +72,7 @@ void showPile (struct pilha *p){
 	int cont;
 	int x = p->topo;
 	
-	printf("\n~~~~~~~MOSTRAR PILHA~~~~~~");
+	printf("\n*****|MOSTRAR PILHA|*****");
 	
 	if (p->topo == -1){
 		printf ("\nERROR - NADA PARA MOSTRAR\n\n");
@@ -81,7 +82,7 @@ void showPile (struct pilha *p){
 			printf ("\n   %0.2f\n",p->nota[cont]);
 		}		
 	}
-	printf ("\n");
+	printf ("\n\n");
 }
 
 //4
@@ -129,15 +130,15 @@ void findNode (struct pilha *p){
 		scanf ("%d",&posicaoNo);
 	
 		while(posicaoNo > x){
-			printf ("ERROR - PROCURANDO NO FORA DOS LIMITES...");
-			scanf ("\n%d\n\n",&posicaoNo);	
+			printf ("\nERROR - PROCURANDO NO FORA DOS LIMITES, TENTE NOVAMENTE: ");
+			scanf ("%d",&posicaoNo);	
 		}
 		for (cont = 0; cont <x+1; cont++){
 			if (posicaoNo == cont){
 				aux = p->nota[cont];
 			}
 		}
-		printf ("\nValor do %dº No é: %0.2f\n\n ",posicaoNo,aux);
+		printf ("\nValor do %dº nó é: %0.2f\n\n ",posicaoNo,aux);
 		}
 		printf ("\n\n");
 }
@@ -172,14 +173,14 @@ void bigSmall (struct pilha *p){
 void topElement (struct pilha *p){
 	
 	float aux;
-	printf("\n*****|ELEMENTO DO TOPO|*****\n");
+	printf("\n*****|ELEMENTO DO TOPO|*****");
 	if (p->topo == -1){
-		printf ("ERROR - PILHA VAZIA\n");
+		printf ("\nERROR - PILHA VAZIA\n");
 	} else {
 		aux = p->nota[p->topo];
 		printf ("\nNota do topo: %0.2f\n\n", aux);
 	}
-	printf ("\n\n");		
+	printf ("\n\n\n");		
 }
 
 //8
@@ -189,8 +190,9 @@ void ParElement (struct pilha *p){
 	int cont, x = p->topo;
 	float notasPar[5];
 	
+	printf("\n*****|ELEMENTOS NAS POSIÇÕES PARES|*****");
 	if (p->topo == -1){
-		printf ("ERROR - PILHA VAZIA\n");
+		printf ("\nERROR - PILHA VAZIA\n");
 	}else{
 		printf ("\n---*NOTAS DE NÓ PAR*---");
 		for (cont = 0; cont < x+1; cont++){
@@ -199,7 +201,7 @@ void ParElement (struct pilha *p){
 			}
 		}
 	}
-	printf ("\n\n");
+	printf ("\n\n\n");
 }
 
 //9
@@ -211,7 +213,7 @@ void order (struct pilha *p){
 	printf("\n*****|NOTAS EM ORDEM CRESCENTE|*****");
 	
 	if (p->topo == -1){
-		printf ("ERROR - PILHA VAZIA\n");
+		printf ("\nERROR - PILHA VAZIA\n");
 	}else{
 		for (x = 0; x < p->topo+1; x++){
 			for (y = 0; y < p->topo+1; y++){
@@ -228,7 +230,7 @@ void order (struct pilha *p){
 			printf ("\n%0.2f\n",p->nota[x]);
 		}
 	}
-	printf ("\n\n");
+	printf ("\n\n\n");
 }
 
 
@@ -241,6 +243,11 @@ main (){
 	
 	startpile (&p);
 	escolha = menu();
+	
+	while (escolha > 9 || escolha < 0){
+		printf ("\nOPÇÃO INEXISTENTE, TENTE NOVAMENTE: ");
+		scanf ("%d",&escolha);
+	}
 	
 	while (escolha != 0){
 		
