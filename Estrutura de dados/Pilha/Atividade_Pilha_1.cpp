@@ -87,7 +87,7 @@ void showPile (struct pilha *p){
 //4
 void findElement (struct pilha *p){
 	
-	int cont,aux=tam;
+	int cont,aux=0;
 	int x = p->topo;
 	float auxNota;
 	
@@ -103,12 +103,12 @@ void findElement (struct pilha *p){
 			if (auxNota == p->nota[cont]){
 				printf ("\nPosição: %d\n",cont);
 				} else {
-					aux--;
+					aux++;
 				}		
 			}
-		if (aux <= 1){
-			printf ("\nNota não encontrada - INEXISTENTE\n");
-		}
+			if (aux > x){
+				printf ("\nNota não encontrada - INEXISTENTE\n");
+			}
 	}
 	printf ("\n\n");
 }
