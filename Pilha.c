@@ -13,6 +13,7 @@ struct pilha {
 int menu (){
 	int r;
 	
+	printf ("\n");
 	printf ("0 – SAIR\n");
 	printf ("1 – EMPILHAR\n");
 	printf ("2 – DESEMPILHAR\n");
@@ -22,10 +23,9 @@ int menu (){
 	printf ("6 - MAIOR E MENOR NOTA\n");
 	printf ("7 - MOSTRAR NOTA DO TOPO\n");
 	printf ("8 - MOSTRAR NOTAS DE NÓS PARES\n");
-	printf ("9 - ORDENAR PILAH DE FORMA CRESCENTE\n");
+	printf ("9 - ORDENAR PILHA DE FORMA CRESCENTE\n");
 	printf ("ESCOLHA SUA OPÇÃO>  ");
 	scanf ("%d",&r);
-	
 	return (r);		
 }
 
@@ -37,11 +37,13 @@ void startpile (struct pilha *p){
 
 //1
 void stackUp (struct pilha *p){
-	system ("cls");
+	
 	printf ("\n*----EMPILHANDO----*\n");
+	printf ("OBS: USE VÍGURLAS \",\" AO INVÉS DE PONTO\".\".\n");
+	
 	float n;
 	if (p->topo == tam-1){
-		printf ("ERROR - PILHA CHEIA\n");
+		printf ("\nERROR - PILHA CHEIA\n");
 	} else {
 		printf ("\nDigite uma nota: ");
 		scanf ("%f",&n);
@@ -55,7 +57,7 @@ void stackUp (struct pilha *p){
 void unPack (struct pilha *p){
 	
 	if (p->topo == -1){
-		printf ("ERROR - PILHA VAZIA");
+		printf ("\nERROR - PILHA VAZIA\n\n");
 	} else {
 		p->topo--;
 	}
@@ -68,82 +70,105 @@ void showPile (struct pilha *p){
 	int x = p->topo;
 	
 	if (p->topo == -1){
-		printf ("ERROR - NADA PARA MOSTRAR");
-	} else {
-		for (cont = 0; cont < x; cont++){
-			printf ("----*NOTA's*----");
-			printf ("\n   %f",p->nota[cont]);
+		printf ("\nERROR - NADA PARA MOSTRAR\n\n");
+	}else {
+		printf ("----*NOTA's*----");
+		for (cont = 0; cont < x+1; cont++){			
+			printf ("\n   %0.2f\n",p->nota[cont]);
 		}		
 	}
+	printf ("\n\n");
 }
 
 //4
 void findElement (struct pilha *p){
-	int cont;
+	
+	int cont,aux=tam;
 	int x = p->topo;
 	float auxNota;
 	
-	printf ("Digite a nota que deseja encontrar: ");
-	scanf ("%f",&auxNota);
 	
-	for (cont = 0; cont < x; cont++){
-		if (auxNota == p->nota[cont]){
-			break;
-		}		
+	if (p->topo == -1){
+		printf ("\nERROR - PILHA VAZIA\n\n");
+	}else {
+		printf ("Digite a nota que deseja encontrar: ");
+		scanf ("%f",&auxNota);
+	
+	 	for (cont = 0; cont < x; cont++){
+			if (auxNota == p->nota[cont]){
+				break;
+				printf ("\nPosição: %d\n\n",cont);
+				} else {
+					aux--;
+				}		
+			}
+		if (aux <= 1){
+			printf ("\nNota não encontrada - INEXISTENTE\n");
+		}
 	}
-	printf ("\n%d",cont);
 }
 
 //5
 void findNode (struct pilha *p){
+	
 	int posicaoNo;
 	int cont, x = p->topo;
 	float aux;
 	
-	printf ("Qual nó deseja encontrar: ");
-	scanf ("%d",&posicaoNo);
+	if (x == -1){
+		printf ("\nERROR - PILHA VAZIA\n\n");
+	}else{
+		printf ("Qual nó deseja encontrar: ");
+		scanf ("%d",&posicaoNo);
 	
-	while(posicaoNo > x){
-		printf ("ERROR - PROCURANDO NO FORA DOS LIMITES...");
-		scanf ("%d",&posicaoNo);	
-	}
-	for (cont = 0; cont <x; cont++){
-		if (posicaoNo == cont){
-			aux = p->nota[cont];
+		while(posicaoNo > x){
+			printf ("ERROR - PROCURANDO NO FORA DOS LIMITES...");
+			scanf ("\n%d\n\n",&posicaoNo);	
 		}
-	}
-	printf ("Valor do %dº No é: %f ",posicaoNo,aux);
+		for (cont = 0; cont <x+1; cont++){
+			if (posicaoNo == cont){
+				aux = p->nota[cont];
+			}
+		}
+		printf ("\nValor do %dº No é: %0.2f\n\n ",posicaoNo,aux);
+		}
 }
 
 //6
 void bigSmall (struct pilha *p){
 	
-	float bigNo = p->nota[0];
-	float smallNo = p->nota[0];
+	float bigNo = p->nota[p->topo];
+	float smallNo = p->nota[p->topo];
 	int cont, x = p->topo;
 	
-	for (cont = 0; cont <x; cont++){
-		if (bigNo > p->nota[cont]){
-			bigNo = p->nota[cont];
-		} 
-		else if (smallNo < p->nota[cont]){
-			smallNo = p->nota[cont];	
-		}		
+	if ( x == -1){
+		printf ("\nERROR - PILHA VAZIA\n\n");
+	}else{
+		for (cont = 0; cont <x; cont++){
+			if (bigNo < p->nota[cont]){
+				bigNo = p->nota[cont];
+			} 
+			else if (smallNo > p->nota[cont]){
+				smallNo = p->nota[cont];	
+			}		
+		}
+		printf ("\nMAIOR NOTA: %0.2f\n",bigNo);
+		printf ("MENOR NOTA: %0.2f\n\n",smallNo);
 	}
-	printf ("MAIOR NOTA: %f\n",bigNo);
-	printf ("MENOR NOTA: %f\n",smallNo);
 }
 
 //7
 void topElement (struct pilha *p){
+	
 	float aux;
 	
 	if (p->topo == -1){
-		printf ("ERROR - PILHA VAZIA");
+		printf ("ERROR - PILHA VAZIA\n");
 	} else {
 		aux = p->nota[p->topo];
+		printf ("\nNota do topo: %0.2f\n\n", aux);
 	}
-	printf ("\n%f", aux);	
+		
 }
 
 //8
@@ -153,17 +178,17 @@ void ParElement (struct pilha *p){
 	int cont, x = p->topo;
 	float notasPar[5];
 	
-	for (cont = 0; cont <x; cont++){
-		if (cont%2 == 0){
-			notasPar[cont] = p->nota[cont];	
-			soma++;
+	if (p->topo == -1){
+		printf ("ERROR - PILHA VAZIA\n");
+	}else{
+		printf ("\n---*NOTAS DE NÓ PAR*---");
+		for (cont = 0; cont < x; cont++){
+			if (cont%2 == 0){
+				printf ("\nNOTAS DE NO PAR: %0.2f ",p->nota[cont]);
+			}
 		}
-	}	
-	
-	printf ("\n---*NOTAS DE NÓ PAR*---");
-	for (cont = 0; cont < soma; cont++){
-		printf ("\nNOTA: %f",cont, notasPar[cont]);
 	}
+	printf ("\n\n");
 }
 
 //9
@@ -172,21 +197,25 @@ void order (struct pilha *p){
 	float aux;
 	int x,y;
 	
-	for (x = 0; x < p->topo; x++){
-		for (y = x; x < p->topo; y++){
-			if (p->nota[y] < p->nota[x]){
-				aux = p->nota[x];
-				p->nota[x] = p->nota[y];
-				p->nota[y] = aux;
+	if (p->topo == -1){
+		printf ("ERROR - PILHA VAZIA\n");
+	}else{
+		for (x = 0; x < p->topo+1; x++){
+			for (y = 0; y < p->topo+1; y++){
+				if (p->nota[y] > p->nota[x]){
+					aux = p->nota[x];
+					p->nota[x] = p->nota[y];
+					p->nota[y] = aux;
+				}
 			}
 		}
-	}
 	
-	printf ("NOTAS ORDENADAS: ");
-	for (x = 0; x < p->topo; x++){
-		printf ("\n[%f]",p->nota[x]);
+		printf ("\nNOTAS ORDENADAS: ");
+		for (x = 0; x < p->topo+1; x++){
+			printf ("\n%0.2f\n",p->nota[x]);
+		}
 	}
-	
+	printf ("\n");
 }
 
 
@@ -197,18 +226,48 @@ main (){
 	int escolha;
 	struct pilha p;
 	
+	startpile (&p);
 	escolha = menu();
 	
 	while (escolha != 0){
-		if (escolha == 1) stackUp(&p);
-		else if (escolha == 2) unPack(&p);
-		else if (escolha == 3) showPile(&p);
-		else if (escolha == 4) findElement(&p);
-		else if (escolha == 5) findNode(&p);
-		else if (escolha == 6) bigSmall(&p);
-		else if (escolha == 7) topElement(&p);
-		else if (escolha == 8) ParElement(&p);
-		else if (escolha == 9) order(&p);
+		system ("cls");
+		
+		if (escolha == 1){
+			system ("cls");
+			stackUp(&p);
+		} 
+		else if (escolha == 2){
+			system ("cls");
+			unPack(&p);			
+		} 
+		else if (escolha == 3){
+			system ("cls");
+			showPile(&p);
+		} 
+		else if (escolha == 4){
+			system ("cls");
+			findElement(&p);
+		} 
+		else if (escolha == 5){
+			system ("cls");
+			findNode(&p);
+		} 
+		else if (escolha == 6){
+			system ("cls");
+			bigSmall(&p);
+		} 
+		else if (escolha == 7){
+			system ("cls");
+			topElement(&p);
+		} 
+		else if (escolha == 8){
+			system ("cls");
+			ParElement(&p);
+		} 
+		else if (escolha == 9){
+			system ("cls");
+			order(&p);
+		} 
 		
 		escolha = menu();
 	}
