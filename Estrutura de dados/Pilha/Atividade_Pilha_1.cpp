@@ -53,11 +53,13 @@ void stackUp (struct pilha *p){
 		p->nota[p->topo] = n;			
 	}
 	printf ("\n\n");
+	system("pause");
 }
 
 //2
 void unPack (struct pilha *p){
 	
+	printf("\n*****|DESEMPILHANDO|*****");
 	if (p->topo == -1){
 		printf ("\nERROR - PILHA VAZIA\n\n");
 	} else {
@@ -71,17 +73,18 @@ void showPile (struct pilha *p){
 	int cont;
 	int x = p->topo;
 	
-	printf("\n~~~~~~~MOSTRAR PILHA~~~~~~");
+	printf("\n*****|MOSTRAR PILHA|*****");
 	
 	if (p->topo == -1){
 		printf ("\nERROR - NADA PARA MOSTRAR\n\n");
 	}else {
-		printf ("----*NOTA's*----");
+		printf ("\n----*NOTA's*----");
 		for (cont = 0; cont < x+1; cont++){			
 			printf ("\n   %0.2f\n",p->nota[cont]);
 		}		
 	}
-	printf ("\n");
+	printf ("\n\n");
+	system("pause");
 }
 
 //4
@@ -111,6 +114,7 @@ void findElement (struct pilha *p){
 			}
 	}
 	printf ("\n\n");
+	system("pause");
 }
 
 //5
@@ -125,21 +129,22 @@ void findNode (struct pilha *p){
 	if (x == -1){
 		printf ("\nERROR - PILHA VAZIA\n\n");
 	}else{
-		printf ("Qual nó deseja encontrar: ");
+		printf ("\nQual nó deseja encontrar: ");
 		scanf ("%d",&posicaoNo);
 	
 		while(posicaoNo > x){
-			printf ("ERROR - PROCURANDO NO FORA DOS LIMITES...");
-			scanf ("\n%d\n\n",&posicaoNo);	
+			printf ("\nERROR - PROCURANDO NO FORA DOS LIMITES, TENTE NOVAMENTE: ");
+			scanf ("%d",&posicaoNo);	
 		}
 		for (cont = 0; cont <x+1; cont++){
 			if (posicaoNo == cont){
 				aux = p->nota[cont];
 			}
 		}
-		printf ("\nValor do %dº No é: %0.2f\n\n ",posicaoNo,aux);
+		printf ("\nValor do %dº nó é: %0.2f\n\n ",posicaoNo,aux);
 		}
 		printf ("\n\n");
+		system("pause");
 }
 
 //6
@@ -166,20 +171,22 @@ void bigSmall (struct pilha *p){
 		printf ("MENOR NOTA: %0.2f\n\n",smallNo);
 	}
 	printf ("\n\n");
+	system("pause");
 }
 
 //7
 void topElement (struct pilha *p){
 	
 	float aux;
-	printf("\n*****|ELEMENTO DO TOPO|*****\n");
+	printf("\n*****|ELEMENTO DO TOPO|*****");
 	if (p->topo == -1){
-		printf ("ERROR - PILHA VAZIA\n");
+		printf ("\nERROR - PILHA VAZIA\n");
 	} else {
 		aux = p->nota[p->topo];
 		printf ("\nNota do topo: %0.2f\n\n", aux);
 	}
-	printf ("\n\n");		
+	printf ("\n\n\n");	
+	system("pause");	
 }
 
 //8
@@ -189,8 +196,9 @@ void ParElement (struct pilha *p){
 	int cont, x = p->topo;
 	float notasPar[5];
 	
+	printf("\n*****|ELEMENTOS NAS POSIÇÕES PARES|*****");
 	if (p->topo == -1){
-		printf ("ERROR - PILHA VAZIA\n");
+		printf ("\nERROR - PILHA VAZIA\n");
 	}else{
 		printf ("\n---*NOTAS DE NÓ PAR*---");
 		for (cont = 0; cont < x+1; cont++){
@@ -199,7 +207,8 @@ void ParElement (struct pilha *p){
 			}
 		}
 	}
-	printf ("\n\n");
+	printf ("\n\n\n");
+	system("pause");
 }
 
 //9
@@ -211,7 +220,7 @@ void order (struct pilha *p){
 	printf("\n*****|NOTAS EM ORDEM CRESCENTE|*****");
 	
 	if (p->topo == -1){
-		printf ("ERROR - PILHA VAZIA\n");
+		printf ("\nERROR - PILHA VAZIA\n");
 	}else{
 		for (x = 0; x < p->topo+1; x++){
 			for (y = 0; y < p->topo+1; y++){
@@ -228,7 +237,8 @@ void order (struct pilha *p){
 			printf ("\n%0.2f\n",p->nota[x]);
 		}
 	}
-	printf ("\n\n");
+	printf ("\n");
+	system("pause");
 }
 
 
@@ -242,47 +252,65 @@ main (){
 	startpile (&p);
 	escolha = menu();
 	
+	while (escolha > 9 || escolha < 0){
+		printf ("\nOPÇÃO INEXISTENTE, TENTE NOVAMENTE: ");
+		scanf ("%d",&escolha);
+	}
+	
 	while (escolha != 0){
-		
 		if (escolha == 1){
 			system ("cls");
 			stackUp(&p);
+			system ("cls");
 		} 
 		else if (escolha == 2){
 			system ("cls");
-			unPack(&p);		
+			unPack(&p);	
+			system ("cls");	
 		} 
 		else if (escolha == 3){
 			system ("cls");
 			showPile(&p);
-			
+			system ("cls");
 		} 
 		else if (escolha == 4){
 			system ("cls");
 			findElement(&p);
+			system ("cls");
 		} 
 		else if (escolha == 5){
 			system ("cls");
 			findNode(&p);
+			system ("cls");
 		} 
 		else if (escolha == 6){
 			system ("cls");
 			bigSmall(&p);
+			system ("cls");
 		} 
 		else if (escolha == 7){
 			system ("cls");
 			topElement(&p);
+			system ("cls");
 		} 
 		else if (escolha == 8){
 			system ("cls");
 			ParElement(&p);
+			system("pause");
+			system ("cls");
 		} 
 		else if (escolha == 9){
 			system ("cls");
 			order(&p);
+			system ("cls");
 		} 
 		
 		escolha = menu();
+		
+		while (escolha > 9 || escolha < 0){
+			printf ("\nOPÇÃO INEXISTENTE, TENTE NOVAMENTE: ");
+			scanf ("%d",&escolha);
+		}
 		
 	}
 	
