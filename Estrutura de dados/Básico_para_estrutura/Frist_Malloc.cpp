@@ -4,20 +4,20 @@
 main(){
 	
 	int *p = (int *) malloc(sizeof(int)); //Malloc == Memory Allocation.
-	/*(int *) È um casting, ele forÁa a mudar a memÛria de void para int... */
-	// pois quando vc resorvou memÛria com o malloc ela era uam memoria vazia.
-	//e seu ponteiro È um int...
+	/*(int *) √© um casting, ele for√ßa a mudar a mem√≥ria de void para int... */
+	// pois quando vc reservou mem√≥ria com o malloc ela era uma memoria vazia.
+	//e seu ponteiro √© um int...
 	
 	*p = 1000;
 	
-	//free(p);
+	//free(p); // Devolve a mem√≥ria pro S.O.
 	
 	printf ("\n%d\n",*p);
 	
-	free (p); /*Vai devolver a memÛria alocada para o S.O.*/ 
-	/*Mas os valores colocados continuam...(No exemplo acimao 1000 continua l·...)*/
+	free (p); /*Vai devolver a mem√≥ria alocada para o S.O.*/ 
+	/*Mas os valores colocados continuam...(No exemplo acimao 1000 continua l√°...)*/
 	
-	int *m = (int *) malloc(sizeof(int)); //o *M pode receber o valor 1000 l· de cima...
-	// mas n„o È 100% certeza, j· que vc n„o indicou nenhum endereÁo, apenas alocou memÛria.
+	int *m = (int *) malloc(sizeof(int)); //o *M pode receber o valor 1000 l√° de cima...
+	// mas n√£o √© 100% certeza, j√° que vc n√£o indicou nenhum endere√ßo, apenas alocou mem√≥ria.
 	
 }
