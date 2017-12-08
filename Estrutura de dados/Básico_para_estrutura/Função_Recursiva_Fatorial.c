@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-/*É uma função que chama ela mesma, esse programa resolve um fatorial...*/
+/*Ã‰ uma funÃ§Ã£o que chama ela mesma, esse programa resolve um fatorial...*/
 main (){
 	
 	int fatorial (int x);
 	int numero, resultado;
 	
-	printf ("Digite um número inteiro: ");
+	printf ("Digite um nÃºmero inteiro: ");
 	scanf ("%d",&numero);
 	
 	resultado = fatorial(numero);
