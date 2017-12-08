@@ -19,7 +19,7 @@ int main(){
 	while (j!=0){
 		system ("cls");
 		
-		printf ("1 - CADASTRAR\n2 - CONSULTAR CLIENTE\nDIGITE SUA OP«√O:  ");
+		printf ("1 - CADASTRAR\n2 - CONSULTAR CLIENTE\nDIGITE SUA OP√á√ÉO:  ");
 		scanf ("%d", &j);
 	
 		if (j==1){
@@ -43,12 +43,12 @@ int main(){
 			
 		for (i=0;i<2;i++){
 			if (strcmp (n, clientes[i].nome) == 0){
-				printf ("\nEndereÁo: %d e Telefone: %d", clientes[i].endereco, clientes[i].telefone);
+				printf ("\nEndere√ßo: %d e Telefone: %d", clientes[i].endereco, clientes[i].telefone);
 				}
 			}
 		}
 		
-	printf ("\n\n0 - PARA SAIR\n1 - PARA CONTINUAR\nDIGITE SUA OP«√O: ");
+	printf ("\n\n0 - PARA SAIR\n1 - PARA CONTINUAR\nDIGITE SUA OP√á√ÉO: ");
 	scanf("%d", &j);
 	}
 	return 0;
