@@ -17,13 +17,13 @@ int menu (){
 	
 	int r;
 	
-	printf ("0 – SAIR");
-	printf ("\n1 – INSERIR NA FILA");
-	printf ("\n2 – EXCLUIR DA FILA");
-	printf ("\n3 – EXIBIR A FILA");
-	printf ("\n4 – MOSTRA A MATRICULA COM MAIOR MÉDIA");
-	printf ("\n5 – MOSTRA O PRIMEIRO ELEMENTO DA FILA");
-	printf ("\nDigite sua opção: ");
+	printf ("0 â€“ SAIR");
+	printf ("\n1 â€“ INSERIR NA FILA");
+	printf ("\n2 â€“ EXCLUIR DA FILA");
+	printf ("\n3 â€“ EXIBIR A FILA");
+	printf ("\n4 â€“ MOSTRA A MATRICULA COM MAIOR MÃ‰DIA");
+	printf ("\n5 â€“ MOSTRA O PRIMEIRO ELEMENTO DA FILA");
+	printf ("\nDigite sua opÃ§Ã£o: ");
 	scanf ("%d",&r);
 	
 	return r;
@@ -41,9 +41,9 @@ void insertfile (fila *f){ //1
 	
 	printf ("\n<<<<<<<<<|INSERIR NA FILA|>>>>>>>>>\n");
 	
-	printf ("\nUSER VÍRGULA \",\" AO INVÉS DE PONTO \".\"\n");	
+	printf ("\nUSER VÃRGULA \",\" AO INVÃ‰S DE PONTO \".\"\n");	
 	if (f->fim == tam-1){
-		printf ("ERROR - FILA ESTÁ CHEIA.\n");
+		printf ("ERROR - FILA ESTÃ CHEIA.\n");
 	}else{		
 		printf ("\nDigite a matricula: ");
 		scanf ("%d",&matricula);
@@ -89,7 +89,7 @@ void showfile (fila *f){ //3
 		printf ("\n\nMatricula: %d ",f->matricula[cont]);
 		printf ("\nNota da prova: %0.2f",f->prova[cont]);
 		printf ("\nNota do trabalho: %0.2f",f->trab[cont]);
-		printf ("\nMédia: %0.2f",(f->prova[cont]+f->trab[cont])/2);
+		printf ("\nMÃ©dia: %0.2f",(f->prova[cont]+f->trab[cont])/2);
 		
 		if ((f->prova[cont]+f->trab[cont])/2 >= 7.0){
 			printf ("\nAPROVADO");
@@ -121,7 +121,7 @@ void bignote (fila *f){ //4
 				maior = media[cont];	
 			}
 		}
-		printf ("\nA maior nota é: %0.2f\n", maior);
+		printf ("\nA maior nota Ã©: %0.2f\n", maior);
 	}	
 	system("pause");	
 }
