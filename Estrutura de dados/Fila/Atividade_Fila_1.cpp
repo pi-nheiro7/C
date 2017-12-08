@@ -29,13 +29,13 @@ int menu (){
 	return r;
 }
 
-void startfile (fila *f){
+void startfila (fila *f){
 	f->inicio = 0;
 	f->fim = -1;		
 }
 
 
-void insertfile (fila *f){ //1
+void insertfila (fila *f){ //1
 	float n_prova, n_trab;
 	int matricula;
 	
@@ -64,7 +64,7 @@ void insertfile (fila *f){ //1
 }
 
 
-void removefile (fila *f){ //2
+void removefila (fila *f){ //2
 	
 	printf ("\n<<<<<<<<<|REMOVER FILA|>>>>>>>>>\n");
 	
@@ -77,7 +77,7 @@ void removefile (fila *f){ //2
 }
 
 
-void showfile (fila *f){ //3
+void showfila (fila *f){ //3
 	printf ("\n<<<<<<<<<|MOSTRAR FILA|>>>>>>>>>\n");
 	
 	int cont;
@@ -153,7 +153,7 @@ main ()	{
 	
 	int r;
 	
-	startfile(&f);
+	startfila(&f);
 	
 	r = menu ();
 	
@@ -161,17 +161,17 @@ main ()	{
 		
 		if (r == 1 ){
 			system ("cls");
-			insertfile (&f);
+			insertfila (&f);
 			system ("cls");	
 		}
 		else if (r == 2){
 			system ("cls");
-			removefile (&f);
+			removefila (&f);
 			system ("cls");
 		}
 		else if (r == 3){
 			system ("cls");
-			showfile (&f);
+			showfila (&f);
 			system ("cls");
 		}
 		else if (r == 4){
