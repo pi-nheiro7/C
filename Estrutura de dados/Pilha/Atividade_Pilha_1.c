@@ -15,17 +15,17 @@ int menu (){
 	
 	printf ("\n*-----*MENU*-----*");
 	printf ("\n");
-	printf ("0 – SAIR\n");
-	printf ("1 – EMPILHAR\n");
-	printf ("2 – DESEMPILHAR\n");
-	printf ("3 – EXIBIR A PILHA\n");
-	printf ("4 - LOCALIZAR NÓ ATRAVÉS DE UMA NOTA\n");
-	printf ("5 - LOCALIZER NOTA ATRAVÉS DO NÓ\n");
+	printf ("0 â€“ SAIR\n");
+	printf ("1 â€“ EMPILHAR\n");
+	printf ("2 â€“ DESEMPILHAR\n");
+	printf ("3 â€“ EXIBIR A PILHA\n");
+	printf ("4 - LOCALIZAR NÃ“ ATRAVÃ‰S DE UMA NOTA\n");
+	printf ("5 - LOCALIZER NOTA ATRAVÃ‰S DO NÃ“\n");
 	printf ("6 - MAIOR E MENOR NOTA\n");
 	printf ("7 - MOSTRAR NOTA DO TOPO\n");
-	printf ("8 - MOSTRAR NOTAS DE NÓS PARES\n");
+	printf ("8 - MOSTRAR NOTAS DE NÃ“S PARES\n");
 	printf ("9 - ORDENAR PILHA DE FORMA CRESCENTE\n");
-	printf ("ESCOLHA SUA OPÇÃO>  ");
+	printf ("ESCOLHA SUA OPÃ‡ÃƒO>  ");
 	scanf ("%d",&r);
 	return (r);	
 }
@@ -40,7 +40,7 @@ void startpile (struct pilha *p){
 void stackUp (struct pilha *p){
 	
 	printf ("\n*----EMPILHANDO----*\n");
-	printf ("OBS: USE VÍGURLAS \",\" AO INVÉS DE PONTO\".\".\n");
+	printf ("OBS: USE VÃGURLAS \",\" AO INVÃ‰S DE PONTO\".\".\n");
 	
 	float n;
 	if (p->topo == tam-1){
@@ -104,13 +104,13 @@ void findElement (struct pilha *p){
 	
 	 	for (cont = 0; cont < x+1; cont++){
 			if (auxNota == p->nota[cont]){
-				printf ("\nPosição: %d\n",cont);
+				printf ("\nPosiÃ§Ã£o: %d\n",cont);
 				} else {
 					aux++;
 				}		
 			}
 			if (aux > x){
-				printf ("\nNota não encontrada - INEXISTENTE\n");
+				printf ("\nNota nÃ£o encontrada - INEXISTENTE\n");
 			}
 	}
 	printf ("\n\n");
@@ -124,12 +124,12 @@ void findNode (struct pilha *p){
 	int cont, x = p->topo;
 	float aux;
 	
-	printf("\n*****|ENCONTRAR NOTA PELO NÓ|*****");
+	printf("\n*****|ENCONTRAR NOTA PELO NÃ“|*****");
 	
 	if (x == -1){
 		printf ("\nERROR - PILHA VAZIA\n\n");
 	}else{
-		printf ("\nQual nó deseja encontrar: ");
+		printf ("\nQual nÃ³ deseja encontrar: ");
 		scanf ("%d",&posicaoNo);
 	
 		while(posicaoNo > x){
@@ -141,7 +141,7 @@ void findNode (struct pilha *p){
 				aux = p->nota[cont];
 			}
 		}
-		printf ("\nValor do %dº nó é: %0.2f\n\n ",posicaoNo,aux);
+		printf ("\nValor do %dÂº nÃ³ Ã©: %0.2f\n\n ",posicaoNo,aux);
 		}
 		printf ("\n\n");
 		system("pause");
@@ -196,14 +196,14 @@ void ParElement (struct pilha *p){
 	int cont, x = p->topo;
 	float notasPar[5];
 	
-	printf("\n*****|ELEMENTOS NAS POSIÇÕES PARES|*****");
+	printf("\n*****|ELEMENTOS NAS POSIÃ‡Ã•ES PARES|*****");
 	if (p->topo == -1){
 		printf ("\nERROR - PILHA VAZIA\n");
 	}else{
-		printf ("\n---*NOTAS DE NÓ PAR*---");
+		printf ("\n---*NOTAS DE NÃ“ PAR*---");
 		for (cont = 0; cont < x+1; cont++){
 			if (cont%2 == 0){
-				printf ("\nNOTAS DO NÓ %dº: %0.2f ",cont, p->nota[cont]);
+				printf ("\nNOTAS DO NÃ“ %dÂº: %0.2f ",cont, p->nota[cont]);
 			}
 		}
 	}
@@ -253,7 +253,7 @@ main (){
 	escolha = menu();
 	
 	while (escolha > 9 || escolha < 0){
-		printf ("\nOPÇÃO INEXISTENTE, TENTE NOVAMENTE: ");
+		printf ("\nOPÃ‡ÃƒO INEXISTENTE, TENTE NOVAMENTE: ");
 		scanf ("%d",&escolha);
 	}
 	
@@ -308,7 +308,7 @@ main (){
 		escolha = menu();
 		
 		while (escolha > 9 || escolha < 0){
-			printf ("\nOPÇÃO INEXISTENTE, TENTE NOVAMENTE: ");
+			printf ("\nOPÃ‡ÃƒO INEXISTENTE, TENTE NOVAMENTE: ");
 			scanf ("%d",&escolha);
 		}
 		
