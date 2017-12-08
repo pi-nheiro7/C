@@ -8,7 +8,7 @@ main (){
 	char w;
 	
 	printf ("\n%li\n",sizeof(x));/*sizeof (tamanho de) calcula o tamanho de bits usado
-	na memória, pode ser usado pra qualquer tipo de dado.*/
+	na memÃ³ria, pode ser usado pra qualquer tipo de dado.*/
 	
 	
 }
