@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//Passando e receber structs em uma função...
+//Passando e receber structs em uma funÃ§Ã£o...
 
 struct horario {
 		int horas;
@@ -12,7 +12,7 @@ struct horario {
 	
 main (){
 	
-	struct horario teste (struct horario x); //função struct e seu parametros.
+	struct horario teste (struct horario x); //funÃ§Ã£o struct e seu parametros.
 	
 	
 	struct horario agora;	
@@ -22,13 +22,13 @@ main (){
 	
 	
 	struct horario proxima;
-	proxima = teste(agora);/* teste(agora) manda para a função os valores do agora*/
-	/*Enquanto a próxima vai receber os valores alterados :o*/
+	proxima = teste(agora);/* teste(agora) manda para a funÃ§Ã£o os valores do agora*/
+	/*Enquanto a prÃ³xima vai receber os valores alterados :o*/
 	
 	printf ("\nMain: \n%d:%d:%d\n", proxima.horas, 
 							proxima.minutos, 
 							proxima.segundos); //eu to no main.
-							//apareço depois pq tive que esperar alterar os valores da função struct.
+							//apareÃ§o depois pq tive que esperar alterar os valores da funÃ§Ã£o struct.
 	system ("pause");
 	return 0;	
 		
@@ -36,9 +36,9 @@ main (){
 
 struct horario teste (struct horario x){
 	
-	printf ("\nFunção: \n%d:%d:%d \n",x.horas, 
+	printf ("\nFunÃ§Ã£o: \n%d:%d:%d \n",x.horas, 
 							x.minutos, 
-							x.segundos); //Aparece 1º pq fui jogado primeiro
+							x.segundos); //Aparece 1Âº pq fui jogado primeiro
 	
 	x.horas = 12;
 	x.minutos = 30;

@@ -111,10 +111,14 @@ void findElement (struct pilha *p){
 			}
 			if (aux > x){
 <<<<<<< HEAD:Estrutura de dados/Pilha/Atividade_Pilha_1.c.cpp
+<<<<<<< HEAD:Estrutura de dados/Pilha/Atividade_Pilha_1.c.cpp
 				printf ("\nNota n�o encontrada - INEXISTENTE\n");
 =======
 				printf ("\nNota não encontrada - INEXISTENTE\n");
 >>>>>>> cb7cc10d4e64e23ba612a44d79c20b8dc7d75729:Estrutura de dados/Pilha/Atividade_Pilha_1.cpp
+=======
+				printf ("\nNota não encontrada - INEXISTENTE\n");
+>>>>>>> 21fa77f4dee4d78b4d2671daa3e79d4dd785040b:Estrutura de dados/Pilha/Atividade_Pilha_1.c
 			}
 	}
 	printf ("\n\n");
@@ -134,10 +138,14 @@ void findNode (struct pilha *p){
 		printf ("\nERROR - PILHA VAZIA\n\n");
 	}else{
 <<<<<<< HEAD:Estrutura de dados/Pilha/Atividade_Pilha_1.c.cpp
+<<<<<<< HEAD:Estrutura de dados/Pilha/Atividade_Pilha_1.c.cpp
 		printf ("\nQual n� deseja encontrar: ");
 =======
 		printf ("\nQual nó deseja encontrar: ");
 >>>>>>> cb7cc10d4e64e23ba612a44d79c20b8dc7d75729:Estrutura de dados/Pilha/Atividade_Pilha_1.cpp
+=======
+		printf ("\nQual nó deseja encontrar: ");
+>>>>>>> 21fa77f4dee4d78b4d2671daa3e79d4dd785040b:Estrutura de dados/Pilha/Atividade_Pilha_1.c
 		scanf ("%d",&posicaoNo);
 	
 		while(posicaoNo > x){
@@ -150,10 +158,14 @@ void findNode (struct pilha *p){
 			}
 		}
 <<<<<<< HEAD:Estrutura de dados/Pilha/Atividade_Pilha_1.c.cpp
+<<<<<<< HEAD:Estrutura de dados/Pilha/Atividade_Pilha_1.c.cpp
 		printf ("\nValor do %d� n� �: %0.2f\n\n ",posicaoNo,aux);
 =======
 		printf ("\nValor do %dº nó é: %0.2f\n\n ",posicaoNo,aux);
 >>>>>>> cb7cc10d4e64e23ba612a44d79c20b8dc7d75729:Estrutura de dados/Pilha/Atividade_Pilha_1.cpp
+=======
+		printf ("\nValor do %dº nó é: %0.2f\n\n ",posicaoNo,aux);
+>>>>>>> 21fa77f4dee4d78b4d2671daa3e79d4dd785040b:Estrutura de dados/Pilha/Atividade_Pilha_1.c
 		}
 		printf ("\n\n");
 		system("pause");
@@ -209,10 +221,14 @@ void ParElement (struct pilha *p){
 	float notasPar[5];
 	
 <<<<<<< HEAD:Estrutura de dados/Pilha/Atividade_Pilha_1.c.cpp
+<<<<<<< HEAD:Estrutura de dados/Pilha/Atividade_Pilha_1.c.cpp
 	printf("\n*****|ELEMENTOS NAS POSI��ES PARES|*****");
 =======
 	printf("\n*****|ELEMENTOS NAS POSIÇÕES PARES|*****");
 >>>>>>> cb7cc10d4e64e23ba612a44d79c20b8dc7d75729:Estrutura de dados/Pilha/Atividade_Pilha_1.cpp
+=======
+	printf("\n*****|ELEMENTOS NAS POSIÇÕES PARES|*****");
+>>>>>>> 21fa77f4dee4d78b4d2671daa3e79d4dd785040b:Estrutura de dados/Pilha/Atividade_Pilha_1.c
 	if (p->topo == -1){
 		printf ("\nERROR - PILHA VAZIA\n");
 	}else{
@@ -270,10 +286,14 @@ main (){
 	
 	while (escolha > 9 || escolha < 0){
 <<<<<<< HEAD:Estrutura de dados/Pilha/Atividade_Pilha_1.c.cpp
+<<<<<<< HEAD:Estrutura de dados/Pilha/Atividade_Pilha_1.c.cpp
 		printf ("\nOP��O INEXISTENTE, TENTE NOVAMENTE: ");
 =======
 		printf ("\nOPÇÃO INEXISTENTE, TENTE NOVAMENTE: ");
 >>>>>>> cb7cc10d4e64e23ba612a44d79c20b8dc7d75729:Estrutura de dados/Pilha/Atividade_Pilha_1.cpp
+=======
+		printf ("\nOPÇÃO INEXISTENTE, TENTE NOVAMENTE: ");
+>>>>>>> 21fa77f4dee4d78b4d2671daa3e79d4dd785040b:Estrutura de dados/Pilha/Atividade_Pilha_1.c
 		scanf ("%d",&escolha);
 	}
 	
@@ -332,10 +352,14 @@ main (){
 		
 		while (escolha > 9 || escolha < 0){
 <<<<<<< HEAD:Estrutura de dados/Pilha/Atividade_Pilha_1.c.cpp
+<<<<<<< HEAD:Estrutura de dados/Pilha/Atividade_Pilha_1.c.cpp
 			printf ("\nOP��O INEXISTENTE, TENTE NOVAMENTE: ");
 =======
 			printf ("\nOPÇÃO INEXISTENTE, TENTE NOVAMENTE: ");
 >>>>>>> cb7cc10d4e64e23ba612a44d79c20b8dc7d75729:Estrutura de dados/Pilha/Atividade_Pilha_1.cpp
+=======
+			printf ("\nOPÇÃO INEXISTENTE, TENTE NOVAMENTE: ");
+>>>>>>> 21fa77f4dee4d78b4d2671daa3e79d4dd785040b:Estrutura de dados/Pilha/Atividade_Pilha_1.c
 			scanf ("%d",&escolha);
 		}
 		
