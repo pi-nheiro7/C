@@ -24,7 +24,7 @@ void main(){
   como estamos lendo do teclado a entrada é stdin (entrada padrão),
   porém em outro caso, a entrada tambem poderia ser um arquivo */
   printf("Por favor digite o seu nome: ");
-  fgets(junior.nome, 20, stdin); //usando o gets para ler string do teclado (var, tamanho do array, fonte(teaclado = stdin ou arquivo));
+  fgets(junior.nome, 20, stdin); //usando o fgets para ler string do teclado (var, tamanho do array, fonte(stdin = teclado));
 
   fflush(stdin);
 
