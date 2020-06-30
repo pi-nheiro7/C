@@ -9,11 +9,14 @@ struct ponto
 };
 
 void atribui(struct ponto *p){ //precisa definir "struct tipo *nome"
-  (*p).x = 10;
-  (*p).y = 10;
+  (*p).x = 10; // p->x = 10 é a mesma coisa
+  p->y = 10; // (*p).y = 10 é a mesma coisa;
   (*p).z = (*p).x + (*p).y;
   // É IMPORTANTE USAR O () NO *p POIS VC ESTÁ PASSANDO A STRUCT TODA POR REFERÊNCIA E NÃO UM ATRIBUTO DELA, SE NÃO USAR O COMPILADOR FICARÁ CONFUSO .
-  // E PENSARÁ QUE É PARA USAR (*p.y) AO INVÉS DE (*p).y;
+  // E PENSARÁ QUE É PARA USAR *(p.y) AO INVÉS DE (*p).y;
+  /*
+    PODEMOS USAR O OPERADOR SETA "->" PARA ACESSAR ALGUM CAMPO DE UMA ESTRUTURA PASSADA POR REFERÊNCIA.
+  */
 }
 
 
