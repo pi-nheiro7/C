@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//Passando e receber structs em uma função...
+//Passando e receber structs em uma função por valor...
 
 struct horario {
 		int horas;
