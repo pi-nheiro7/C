@@ -1,5 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+/*
+  OPERADORES:
+  & = ENDEREÇO em si;
+  * = VALOR CONTIDO NO ENDEREÇO Em QUESTÃO;
+  %p = é utilizado para imprimir valores de endereço dos ponteiros.
+*/
 
 void main()
 {
@@ -15,7 +21,7 @@ void main()
   printf("\nO valor do ponteiro: %d", *ponteiro);
   // printf("\nO valor do ponteiro: %d", ponteiro); OBS: PARA IMPRIMIR O VALOR DO PONTEIRO É PRECISO DO '*' OU ELE IRÁ BUSCAR PELO ENDEREÇO.
 
-  printf("\nO endereço de memória do ponteiro: %x\n", ponteiro);
+  printf("\nO endereço de memória do ponteiro: %p\n", ponteiro);
 
   // OBS: quando a var vem COM '*' significa q ele ta usando o valor apontado e não o endereço, pra usar o endereço tme que ser SEM o '*'
 
