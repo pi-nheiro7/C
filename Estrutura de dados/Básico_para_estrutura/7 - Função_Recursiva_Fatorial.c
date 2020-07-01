@@ -3,7 +3,7 @@
 /*É uma função que chama ela mesma, esse programa resolve um fatorial...*/
 main (){
 	
-	int fatorial (int x);
+	int fatorial (int x); //->assinatura da função.
 	int numero, resultado;
 	
 	printf ("Digite um número inteiro: ");
@@ -24,6 +24,8 @@ int fatorial(int x){
 	}
 	
 	return resultado;
-	
+	/*vale lembrar que fatorial funciona como se os resultados fossem ficando empilhados até que
+		as condições sejam satisfeitas, é uma maneira elegante , muito "cara".
+	*/
 }
 
