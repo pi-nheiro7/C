@@ -1,1 +1,1 @@
-Organizando respositório para futuras consultas pessoas.
+Organizando respositório para futuras consultas pessoais.
