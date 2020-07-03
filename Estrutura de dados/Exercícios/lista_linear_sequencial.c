@@ -97,7 +97,7 @@ int searchPositionByElement(list *l, int element)
 
 bool insertElement(list *l, registry reg, int position)
 {
-  if (l->numElements == MAX || position < 0 || position > l->numElements)
+  if (l->numElements == MAX-1 || position < 0 || position > l->numElements)
   {
     printf("invalid position, please try again!\n");
     return false;
