@@ -63,7 +63,7 @@ void showAllElements(list *l)
     printf("\n----->Elements<-----\n");
     for (i = 0; i < l->numElements; i++)
     {
-      printf("Elemento: [%d] na Posição: %d \n", l->reg[i].key, i);
+      printf("Posição: [%d] -> Elemento: %d \n", i, l->reg[i].key);
     }
     printf("\n\n");
   }
@@ -95,22 +95,64 @@ int searchPositionByElement(list *l, int element)
   }
 }
 
-bool insertElement(list *l, registry reg, int position)
-{
-  if (l->numElements == MAX-1 || position < 0 || position > l->numElements)
-  {
-    printf("invalid position, please try again!\n");
+// bool insertElement(list *l, registry reg, int position)
+// {
+//   if (l->numElements == MAX-1 || position < 0 || position > l->numElements)
+//   {
+//     printf("invalid position, please try again!\n");
+//     return false;
+//   }
+//   else
+//   {
+//     for (int i = l->numElements; i > position; i--)
+//     {
+//       l->reg[i].key = l->reg[i - 1].key;
+//     }
+//     l->reg[position] = reg;
+//     l->numElements++;
+//     return true;
+//   }
+// }
+
+//Insert and order at the same function.
+bool ordenatedInsert(list *l, int value){
+  if(l->numElements == MAX-1){
+    printf("The list is full!\n");
     return false;
-  }
-  else
-  {
-    for (int i = l->numElements; i > position; i--)
-    {
-      l->reg[i].key = l->reg[i - 1].key;
+  }else{
+    int count = l->numElements;
+    while(count > 0 && l->reg[count-1].key > value){ 
+      l->reg[count].key = l->reg[count-1].key;
+      count--;
     }
-    l->reg[position] = reg;
+    l->reg[count].key = value;
     l->numElements++;
+    printf("Done!\n");
     return true;
+  }
+}
+
+//achar o erro dessa função
+int binarySearch(list *l, int valueToSearch){
+  if (l->numElements == 0){
+    printf("List empty!!!\n");
+  }else{
+    int left, right, middle;
+    left = 0;
+    right = l->numElements - 1;
+    while (left <= right){
+      middle = (int)(left + right) / 2;
+      if (middle == valueToSearch){
+        printf("achou: %d\n", middle);
+        return middle;
+      }else{
+        if (left < middle){
+          left = middle + 1;
+        }else if(right > middle) {
+          right = middle - 1;
+        }
+      }
+    }
   }
 }
 
@@ -169,15 +211,16 @@ void main()
       int number;
       printf("Please type the number that you want to find: ");
       scanf("%d", &number);
-      searchPositionByElement(&listOne, number);
+      binarySearch(&listOne, number);
       break;
     case 4:
       system("clear");
-      printf("Tell the key that you want insert: ");
-      scanf("%d", &reg.key);
-      printf("Now I need to the position that you want insert it: ");
+      // printf("Tell the key that you want insert: ");
+      // scanf("%d", &reg.key);
+      printf("Now I need to the value that you want insert it: ");
       scanf("%d", &valuePosition);
-      insertElement(&listOne, reg, valuePosition);
+      // insertElement(&listOne, reg, valuePosition);
+      ordenatedInsert(&listOne, valuePosition);
       break;
     case 5:
       system("clear");
