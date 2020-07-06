@@ -132,7 +132,6 @@ bool ordenatedInsert(list *l, int value){
   }
 }
 
-//achar o erro dessa função
 int binarySearch(list *l, int valueToSearch){
   if (l->numElements == 0){
     printf("List empty!!!\n");
@@ -142,7 +141,7 @@ int binarySearch(list *l, int valueToSearch){
     right = l->numElements - 1;
     while (left <= right){
       middle = (int)(left + right) / 2;
-      if (middle == valueToSearch){
+      if (l->reg[middle].key == valueToSearch){
         printf("achou: %d\n", middle);
         return middle;
       }else{
