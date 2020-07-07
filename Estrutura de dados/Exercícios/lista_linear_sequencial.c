@@ -15,13 +15,6 @@ typedef struct
   int numElements;
 } list;
 
-//functions interface
-int menu();
-void initializeList(list *l);
-int numberOfElements(list *l);
-void showAllElements(list *l);
-int searchPositionByElement(list *l, int element);
-bool insertElement(list *l, registry reg, int position);
 
 //Functions implemention
 int menu()
