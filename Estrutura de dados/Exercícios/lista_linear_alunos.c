@@ -125,16 +125,15 @@ bool removerAluno(listaAlunos *alunos){
   printf("Digite a matricula do aluno que será deletado: ");
   scanf("%d", &matriculaDeletada);
   int indexAlunoDeletado = buscarAlunoPelaMatricula(alunos, matriculaDeletada);
-  printf("voltei, %d\n", indexAlunoDeletado);
   if(alunos->totalAlunos == 0 || indexAlunoDeletado == -1){
     printf("Não tem nenhum aluno para ser removido!\n");
     return false;
   }else{
-    printf("foo");
     int count = indexAlunoDeletado;
     while (count < alunos->totalAlunos)
     {
       alunos->aluno[count] = alunos->aluno[count + 1];
+      count++;
     }
     alunos->totalAlunos--;
     printf("Aluno deletado!\n");
