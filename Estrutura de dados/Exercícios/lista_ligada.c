@@ -40,6 +40,7 @@ int tamanhoLista(lista *l){
     count = l->elem[count+1].IndiceProx;
     tamanho++;
   }
+  printf("Tamanho: %d", tamanho);
   return tamanho;
   
 }
@@ -50,4 +51,45 @@ int obterNo(lista *l){
     l->dispo = l->elem[l->dispo].IndiceProx;
   }
   return resultado;
+}
+
+bool inserir(lista *l){
+  if(l->dispo == -1){
+    printf("Lista está cheia...\n");
+    return false;
+  }
+  elemento newElemento;
+  newElemento.reg.chave = 5;
+
+  int count = l->inicio;
+  int chave = newElemento.reg.chave;
+  int anterior = -1;
+  while((count != -1) && (l->elem[count].reg.chave < chave)){
+    anterior = count;
+    count = l->elem[count].IndiceProx;
+  }
+  if((count != -1) && (l->elem[count].reg.chave == chave)){
+    printf("Valor inválido!\n");
+    return false;
+  }
+  int posicaoOk = obterNo(l);
+  l->elem[posicaoOk] = newElemento;
+  if (anterior == -1){
+    l->elem[count].IndiceProx = l->inicio;
+    l->inicio = count;
+  }else{
+    l->elem[count].IndiceProx = l->elem[anterior].IndiceProx;
+    l->elem[anterior].IndiceProx = 1;
+  }
+  return true;  
+}
+
+
+void main(){
+  lista l;
+
+  iniciarLista(&l);
+  inserir(&l);
+  tamanhoLista(&l);
+
 }
