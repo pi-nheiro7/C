@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define max 10
+#define max 2
 
 typedef struct{
   int chave;
@@ -54,11 +54,11 @@ bool inserir(pilhadupla *p){
   scanf("%d", &pilha);
   if (pilha < 1 || pilha > 2)
   {
-    printf("Opção inválida.");
+    printf("Opção inválida.\n");
     return false;
   }
   if(p->topo1+1 == p->topo2){
-    printf("Pilha cheia.");
+    printf("Pilha cheia.\n");
     return false;
   }
   registro newReg;
