@@ -10,6 +10,7 @@ void main()
   menor = vetor[0];
   int posicao = 0;
   int valor;
+  int aux;
   for (count1 = 0; count1 < max; count1++)
   {
     for(count2 = count1; count2 < max; count2++){
@@ -20,7 +21,9 @@ void main()
         
       }
     }
+    aux = vetor[count1];
     vetor[count1] = menor;
+    vetor[posicao] = aux;
   }
 
   printf("%d - %d\n", menor, posicao);
